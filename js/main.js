@@ -73,10 +73,12 @@
   document.querySelector('.stage-btn').addEventListener('click', function (e) { openLb(styleItems, styleIndex, e.currentTarget); });
 
   var socialBtns = Array.prototype.slice.call(document.querySelectorAll('#social-grid button'));
+  var socialLargeBtns = Array.prototype.slice.call(document.querySelectorAll('#social-large button'));
   var socialItems = socialBtns.map(function (b, i) {
     return { src: b.getAttribute('data-full'), alt: b.querySelector('img').alt };
   });
   socialBtns.forEach(function (b, i) { b.addEventListener('click', function (e) { openLb(socialItems, i, e.currentTarget); }); });
+  socialLargeBtns.forEach(function (b, i) { b.addEventListener('click', function (e) { openLb(socialItems, i, e.currentTarget); }); });
 
   /* ---- reveal on scroll (visible at rest without JS or with reduced motion) ---- */
   var targets = document.querySelectorAll('.board li, .thumbs button, .social-grid li, .player, .stage, .sec-head');

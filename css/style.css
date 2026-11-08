@@ -111,6 +111,18 @@ a { color: inherit; }
 .thumbs button:focus-visible img { border-color: var(--ink-soft); }
 
 /* ---------- social ---------- */
+.social-large {
+  list-style: none; margin: 0 0 24px; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;
+}
+.social-large button {
+  display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in;
+  overflow: hidden; border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s;
+}
+.social-large button:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.social-large button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.social-large img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 .social-grid {
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px;
@@ -161,6 +173,7 @@ a { color: inherit; }
 }
 @media (max-width: 560px) {
   .social-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .social-large { grid-template-columns: 1fr; }
   .board { grid-template-columns: 1fr; }
   .lightbox button { width: 40px; height: 40px; font-size: 24px; }
   .lb-prev, .lb-next { top: auto; bottom: 16px; transform: none; }
