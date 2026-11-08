@@ -46,6 +46,7 @@ a { color: inherit; }
 /* ---------- sections ---------- */
 .fold { padding-block: clamp(20px, 2.5vw, 36px); }
 .fold + .fold { border-top: 1px solid var(--line); }
+.sec-title { margin: 0 0 18px; font-size: clamp(20px, 2vw, 26px); font-weight: 600; letter-spacing: -.01em; line-height: 1.2; }
 .eyebrow {
   margin: 0 0 14px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
 }
