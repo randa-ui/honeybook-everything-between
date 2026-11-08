@@ -8,6 +8,7 @@
   --ink: #F2F2F2;
   --ink-soft: #9C9C9C;
   --line: #2A2A2A;
+  --accent: #FFF91A;
 
   --font-ui: "Poppins", "Helvetica Neue", Arial, sans-serif;
   --font-serif: "PT Serif", Georgia, "Times New Roman", serif;
@@ -55,6 +56,9 @@ a { color: inherit; }
 .synopsis { margin-top: 0; max-width: none; }
 .synopsis p { margin: 0 0 12px; font-size: 14px; line-height: 1.6; color: var(--ink); }
 .synopsis p em { font-family: var(--font-serif); font-size: 1.08em; }
+.brief h3 { margin: 22px 0 6px; font-size: 22px; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; color: var(--accent); }
+.brief h3:first-child { margin-top: 0; }
+.brief p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--ink); }
 
 /* ---------- storyboard ---------- */
 .board {
