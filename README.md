@@ -1,6 +1,6 @@
-# HoneyBook · Everything Between
+# Everything Between
 
-One-page presentation of the HoneyBook "Everything between" video ad by Ran Daskal:
+One-page presentation of the "Everything between" video ad by Ran Daskal:
 concept, storyboard, videoboard, style frames, motion sample, final cut and social cut-downs.
 
 Static site (HTML, CSS, vanilla JS). Served with GitHub Pages from the `main` branch.

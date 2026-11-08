@@ -1,19 +1,19 @@
 /* Layout: one long scroll, each section a "fold" on warm off-white paper.
-   Neutral palette, Poppins for UI, PT Serif italic for the moments.
+   Plain white and grey. Poppins for UI, PT Serif italic for the moments.
    Deliberately single-theme (light). */
 :root {
-  --paper: #F6F5F1;
-  --paper-deep: #ECEAE3;
+  --paper: #FFFFFF;
+  --paper-deep: #F3F3F3;
   --card: #FFFFFF;
-  --ink: #1A242E;
-  --ink-soft: #5B6470;
-  --line: #DDD9CF;
+  --ink: #1C1C1C;
+  --ink-soft: #6E6E6E;
+  --line: #E6E6E6;
 
   --font-ui: "Poppins", "Helvetica Neue", Arial, sans-serif;
   --font-serif: "PT Serif", Georgia, "Times New Roman", serif;
 
   --radius: 14px;
-  --shadow: 0 18px 50px -24px rgba(26, 36, 46, .35), 0 2px 6px rgba(26, 36, 46, .06);
+  --shadow: 0 18px 50px -24px rgba(0, 0, 0, .28), 0 2px 6px rgba(0, 0, 0, .05);
   --gutter: max(16px, env(safe-area-inset-left, 0px));
   color-scheme: light;
 }
@@ -103,7 +103,7 @@ a { color: inherit; }
 .player .play {
   position: absolute; inset: 0; width: 100%; border: 0; cursor: pointer;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-  background: linear-gradient(to top, rgba(26,36,46,.42), rgba(26,36,46,.05) 55%, rgba(26,36,46,0));
+  background: linear-gradient(to top, rgba(0,0,0,.42), rgba(0,0,0,.05) 55%, rgba(0,0,0,0));
   color: #fff; transition: opacity .3s;
 }
 .player .play::before {
@@ -152,7 +152,7 @@ a { color: inherit; }
 }
 .social-grid button {
   display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in;
-  border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(26,36,46,.05);
+  border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(0,0,0,.05);
   transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s;
 }
 .social-grid button:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
@@ -167,7 +167,7 @@ a { color: inherit; }
 [hidden] { display: none !important; }
 .lightbox {
   position: fixed; inset: 0; z-index: 100; display: grid; place-items: center;
-  background: rgba(20, 26, 34, .92); padding: 24px;
+  background: rgba(0, 0, 0, .9); padding: 24px;
   padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px));
 }
 .lightbox figure { margin: 0; max-width: min(1500px, 100%); max-height: 100%; display: grid; gap: 12px; justify-items: center; }
