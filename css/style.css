@@ -145,6 +145,7 @@ a { color: inherit; }
 /* ---------- footer ---------- */
 .foot { border-top: 1px solid var(--line); padding-block: clamp(20px, 2.5vw, 36px); font-size: 14px; color: var(--ink-soft); }
 .foot p { margin: 0; }
+.foot .foot-name { color: var(--ink); font-weight: 600; }
 
 /* ---------- lightbox ---------- */
 [hidden] { display: none !important; }
