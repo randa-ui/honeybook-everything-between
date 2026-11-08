@@ -1,24 +1,6 @@
 (function () {
   document.documentElement.classList.add('js');
 
-  /* ---- scroll progress + active nav ---- */
-  var bar = document.getElementById('progress-bar');
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
-  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
-
-  function onScroll() {
-    var doc = document.documentElement;
-    var max = doc.scrollHeight - window.innerHeight;
-    if (bar) bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
-    var y = window.scrollY + window.innerHeight * 0.35;
-    var current = 0;
-    sections.forEach(function (s, i) { if (s && s.offsetTop <= y) current = i; });
-    links.forEach(function (a, i) { a.classList.toggle('active', i === current); });
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  onScroll();
-
   /* ---- video players: click-to-play, one at a time ---- */
   var players = Array.prototype.slice.call(document.querySelectorAll('[data-player]'));
   players.forEach(function (p) {
@@ -108,7 +90,7 @@
   socialBtns.forEach(function (b, i) { b.addEventListener('click', function (e) { openLb(socialItems, i, e.currentTarget); }); });
 
   /* ---- reveal on scroll (visible at rest without JS or with reduced motion) ---- */
-  var targets = document.querySelectorAll('.board li, .thumbs button, .social-grid li, .player, .stage, .sec-head, .vo li');
+  var targets = document.querySelectorAll('.board li, .thumbs button, .social-grid li, .player, .stage, .sec-head');
   Array.prototype.forEach.call(targets, function (el) { el.classList.add('reveal'); });
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
