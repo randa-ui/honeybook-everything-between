@@ -5,17 +5,9 @@
   var players = Array.prototype.slice.call(document.querySelectorAll('[data-player]'));
   players.forEach(function (p) {
     var video = p.querySelector('video');
-    var btn = p.querySelector('.play');
-    btn.addEventListener('click', function () {
-      players.forEach(function (o) { if (o !== p) o.querySelector('video').pause(); });
-      video.play();
-    });
     video.addEventListener('play', function () {
-      p.classList.add('is-playing');
       players.forEach(function (o) { if (o !== p) o.querySelector('video').pause(); });
     });
-    video.addEventListener('pause', function () { if (video.currentTime === 0 || video.ended) p.classList.remove('is-playing'); });
-    video.addEventListener('ended', function () { p.classList.remove('is-playing'); });
   });
 
   /* ---- style frames gallery ---- */
@@ -41,7 +33,6 @@
   /* ---- lightbox (shared by style frames and social) ---- */
   var lb = document.getElementById('lightbox');
   var lbImg = document.getElementById('lb-img');
-  var lbCap = document.getElementById('lb-cap');
   var set = [], idx = 0, lastFocus = null;
 
   function openLb(items, i, trigger) {
@@ -59,7 +50,6 @@
   function render() {
     var it = set[idx];
     lbImg.src = it.src; lbImg.alt = it.alt || '';
-    lbCap.textContent = '';
     lb.querySelector('.lb-prev').hidden = set.length < 2;
     lb.querySelector('.lb-next').hidden = set.length < 2;
   }
@@ -77,13 +67,13 @@
   });
 
   var styleItems = tabs.map(function (t) {
-    return { src: t.getAttribute('data-src'), alt: t.querySelector('img').alt, cap: t.getAttribute('data-cap') };
+    return { src: t.getAttribute('data-src'), alt: t.querySelector('img').alt };
   });
   document.querySelector('.stage-btn').addEventListener('click', function (e) { openLb(styleItems, styleIndex, e.currentTarget); });
 
   var socialBtns = Array.prototype.slice.call(document.querySelectorAll('#social-grid button'));
   var socialItems = socialBtns.map(function (b, i) {
-    return { src: b.getAttribute('data-full'), alt: b.querySelector('img').alt, cap: 'Social post ' + (i + 1) + ' of ' + socialBtns.length + ' · 1080 × 1080' };
+    return { src: b.getAttribute('data-full'), alt: b.querySelector('img').alt };
   });
   socialBtns.forEach(function (b, i) { b.addEventListener('click', function (e) { openLb(socialItems, i, e.currentTarget); }); });
 
