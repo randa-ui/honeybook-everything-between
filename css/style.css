@@ -143,7 +143,7 @@ a { color: inherit; }
 .social-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 
 /* ---------- footer ---------- */
-.foot { border-top: 1px solid var(--line); padding-block: 40px; font-size: 14px; color: var(--ink-soft); }
+.foot { border-top: 1px solid var(--line); padding-block: clamp(20px, 2.5vw, 36px); font-size: 14px; color: var(--ink-soft); }
 .foot p { margin: 0; }
 
 /* ---------- lightbox ---------- */
