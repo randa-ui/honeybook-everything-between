@@ -5,17 +5,10 @@
   var players = Array.prototype.slice.call(document.querySelectorAll('[data-player]'));
   players.forEach(function (p) {
     var video = p.querySelector('video');
-    video.setAttribute('tabindex', '0');
-    video.setAttribute('role', 'button');
-    function toggle() { if (video.paused) { video.play(); } else { video.pause(); } }
-    video.addEventListener('click', toggle);
-    video.addEventListener('keydown', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); } });
     video.addEventListener('play', function () {
-      p.classList.add('is-playing');
       players.forEach(function (o) { if (o !== p) o.querySelector('video').pause(); });
     });
-    video.addEventListener('pause', function () { p.classList.remove('is-playing'); });
-    video.addEventListener('ended', function () { video.load(); p.classList.remove('is-playing'); });
+    video.addEventListener('ended', function () { video.load(); });
   });
 
   /* ---- style frames gallery ---- */

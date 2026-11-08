@@ -1,21 +1,21 @@
 /* Layout: one long scroll, each section a "fold" on warm off-white paper.
-   Plain white and grey. Poppins for UI, PT Serif italic for the moments.
-   Deliberately single-theme (light). */
+   Dark grey and off-white. Poppins for UI, PT Serif italic for the moments.
+   Deliberately single-theme (dark). */
 :root {
-  --paper: #FFFFFF;
-  --paper-deep: #F3F3F3;
-  --card: #FFFFFF;
-  --ink: #1C1C1C;
-  --ink-soft: #6E6E6E;
-  --line: #E6E6E6;
+  --paper: #111111;
+  --paper-deep: #1C1C1C;
+  --card: #181818;
+  --ink: #F2F2F2;
+  --ink-soft: #9C9C9C;
+  --line: #2A2A2A;
 
   --font-ui: "Poppins", "Helvetica Neue", Arial, sans-serif;
   --font-serif: "PT Serif", Georgia, "Times New Roman", serif;
 
   --radius: 14px;
-  --shadow: 0 18px 50px -24px rgba(0, 0, 0, .28), 0 2px 6px rgba(0, 0, 0, .05);
+  --shadow: 0 18px 50px -24px rgba(0, 0, 0, .7), 0 2px 6px rgba(0, 0, 0, .3);
   --gutter: max(16px, env(safe-area-inset-left, 0px));
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -89,12 +89,10 @@ a { color: inherit; }
 /* ---------- video players ---------- */
 .player {
   position: relative; width: min(1100px, 100%); margin-inline: auto;
-  border-radius: var(--radius); overflow: hidden; background: var(--ink);
+  border-radius: var(--radius); overflow: hidden; background: #000;
   box-shadow: var(--shadow); border: 1px solid var(--line);
 }
-.player video { width: 100%; aspect-ratio: 16 / 9; background: #000; cursor: pointer; }
-.player video:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
-.player video::-webkit-media-controls { display: none !important; }
+.player video { width: 100%; aspect-ratio: 16 / 9; background: #000; }
 
 /* ---------- style frames gallery ---------- */
 .gallery { display: grid; gap: 20px; }
@@ -143,7 +141,7 @@ a { color: inherit; }
 [hidden] { display: none !important; }
 .lightbox {
   position: fixed; inset: 0; z-index: 100; display: grid; place-items: center;
-  background: rgba(0, 0, 0, .9); padding: 24px;
+  background: rgba(0, 0, 0, .94); padding: 24px;
   padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px));
 }
 .lightbox figure { margin: 0; max-width: min(1500px, 100%); max-height: 100%; display: grid; gap: 12px; justify-items: center; }
@@ -153,8 +151,8 @@ a { color: inherit; }
   width: 48px; height: 48px; border-radius: 50%; font-size: 30px; line-height: 1; display: grid; place-items: center;
   transition: background .2s;
 }
-.lightbox button:hover { background: #fff; color: var(--ink); }
-.lightbox button:focus-visible { outline: 3px solid #fff; }
+.lightbox button:hover { background: var(--ink); color: var(--paper); }
+.lightbox button:focus-visible { outline: 3px solid var(--ink); }
 .lb-close { top: 20px; right: max(20px, env(safe-area-inset-right, 0px)); }
 .lb-prev { left: max(16px, env(safe-area-inset-left, 0px)); top: 50%; transform: translateY(-50%); }
 .lb-next { right: max(16px, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); }
