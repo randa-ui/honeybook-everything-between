@@ -20,7 +20,6 @@
 
   /* ---- style frames gallery ---- */
   var stageImg = document.getElementById('stage-img');
-  var stageCap = document.getElementById('stage-cap');
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.thumbs [role="tab"]'));
   var styleIndex = 0;
   function showStyle(i, instant) {
@@ -30,7 +29,6 @@
     var swap = function () {
       stageImg.src = t.getAttribute('data-src');
       stageImg.alt = t.querySelector('img').alt;
-      stageCap.textContent = t.getAttribute('data-cap');
       stageImg.onload = function () { stageImg.classList.remove('fading'); };
     };
     if (instant) { swap(); return; }
@@ -61,7 +59,7 @@
   function render() {
     var it = set[idx];
     lbImg.src = it.src; lbImg.alt = it.alt || '';
-    lbCap.textContent = it.cap || '';
+    lbCap.textContent = '';
     lb.querySelector('.lb-prev').hidden = set.length < 2;
     lb.querySelector('.lb-next').hidden = set.length < 2;
   }
