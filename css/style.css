@@ -90,7 +90,9 @@ a { color: inherit; }
   border-radius: var(--radius); overflow: hidden; background: var(--ink);
   box-shadow: var(--shadow); border: 1px solid var(--line);
 }
-.player video { width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.player video { width: 100%; aspect-ratio: 16 / 9; background: #000; cursor: pointer; }
+.player video:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.player video::-webkit-media-controls { display: none !important; }
 
 /* ---------- style frames gallery ---------- */
 .gallery { display: grid; gap: 20px; }
